@@ -20,8 +20,10 @@ def train_logistic_regression(X, y, lr=0.1, steps=1000):
         # Predicted probabilities
         y_pred = _sigmoid(z)
 
-        # Compute gradients
+        # Calculate Error
         error = y_pred - y
+
+        # Compute gradients
         dw = (X.T @ error) / n_samples
         db = np.mean(error)
 
